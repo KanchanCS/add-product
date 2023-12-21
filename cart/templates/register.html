@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block content %}
+
+
+<div class="container">
+    <div class="box">
+        <div class="head">
+            <h1>
+                <i class="fa fa-user text-danger" aria-hidden="true"></i> Registration Form
+            </h1>
+        </div>
+        <div class="content">
+            <form method="post">
+                {% csrf_token %}
+                <div class="alert-danger mt-3 mb-5">
+                    {{form.errors}}
+                </div>
+                <div class="mb-2 py-2  input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="company_name"> <i class="fa fa-address-book" aria-hidden="true" aria-hidden="true"></i></span>
+                    </div>
+                    <input class="form-control" autocomplete="off" type="company_name" name="company_name" maxlength="254" required="" id="company_name"
+                        placeholder="company_name" />
+                </div>
+                <div class="mb-2 py-2  input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="id_email"> <i class="fa fa-envelope" aria-hidden="true"></i></span>
+                    </div>
+                    <input class="form-control" autocomplete="off" type="email" name="email" maxlength="254" required="" id="id_email"
+                        placeholder="Email" />
+                </div>
+                <div class="mb-2 py-2  input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="id_phone"> <i class="fa fa-phone" aria-hidden="true"></i></span>
+                    </div>
+                    <input class="form-control" autocomplete="off" type="phone" name="phone" maxlength="254" required="" id="id_phone"
+                        placeholder="phone" />
+                </div>
+               
+                <div class="mb-2 py-2 input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="id_password1"> <i class="fa fa-key" aria-hidden="true"></i></span>
+                    </div>
+                    <input class="form-control" type="password" name="password1" required="" id="id_password1"
+                        placeholder="Password" />
+                </div>
+                <div class="mb-2 py-2 input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="id_password2"> <i class="fa fa-key" aria-hidden="true"></i></span>
+                    </div>
+                    <input class="form-control" type="password" name="password2" required="" id="id_password2"
+                        placeholder="Re-type Password" />
+                </div>
+                <div class="text-center">
+                    <input type="submit" class="btn btn-warning p-2" value="Register"  style="width: 200px;"/>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
